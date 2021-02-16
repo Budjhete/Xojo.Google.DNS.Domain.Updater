@@ -7,13 +7,13 @@ Protected Interface xSocketInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub xHeadersReceived(URL as Text, HTTPStatus as Integer)
+		Sub xHeadersReceived(URL as String, HTTPStatus as Integer)
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub xPageReceived(URL as Text, HTTPStatus as Integer, Content as xojo.Core.MemoryBlock)
+		Sub xPageReceived(URL as String, HTTPStatus as Integer, Content as MemoryBlock)
 		  
 		End Sub
 	#tag EndMethod

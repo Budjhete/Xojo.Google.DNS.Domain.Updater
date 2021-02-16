@@ -1,7 +1,7 @@
 #tag Class
 Protected Class ZoneUpdater
 	#tag Method, Flags = &h0
-		Function CheckIP() As text
+		Function CheckIP() As String
 		  dim s as new HTTPSecureSocket
 		  
 		  dim ss as string = s.get("https://domains.google.com/checkip", 10)
@@ -19,7 +19,7 @@ Protected Class ZoneUpdater
 
 	#tag Method, Flags = &h0
 		Sub Update()
-		  dim url as text = "https://domains.google.com/nic/update?hostname="+zone+"."+YourDomain+"&myip="+ip
+		  dim url as String = "https://domains.google.com/nic/update?hostname="+zone+"."+YourDomain+"&myip="+ip
 		  
 		  gSocking.RequestHeader("User-Agent") = "Chrome/41.0 "+YourGmail
 		  gSocking.RequestHeader("Authorization") =  "Basic " + EncodeBase64(UserName+":"+Password).ToText
@@ -35,31 +35,31 @@ Protected Class ZoneUpdater
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		ip As Text
+		ip As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		Password As Text
+		Password As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		URL As Text
+		URL As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		UserName As Text
+		UserName As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		YourDomain As Text
+		YourDomain As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		YourGmail As Text
+		YourGmail As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		Zone As Text
+		Zone As String
 	#tag EndProperty
 
 
