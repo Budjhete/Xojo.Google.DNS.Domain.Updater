@@ -77,7 +77,7 @@ Protected Class ZoneUpdater
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
-			Type="Text"
+			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
@@ -101,7 +101,7 @@ Protected Class ZoneUpdater
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
-			Type="Text"
+			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
@@ -125,7 +125,7 @@ Protected Class ZoneUpdater
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
-			Type="Text"
+			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
@@ -133,7 +133,7 @@ Protected Class ZoneUpdater
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
-			Type="Text"
+			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
@@ -141,7 +141,7 @@ Protected Class ZoneUpdater
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
-			Type="Text"
+			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
@@ -149,15 +149,15 @@ Protected Class ZoneUpdater
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
-			Type="Text"
-			EditorType=""
+			Type="String"
+			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Zone"
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
-			Type="Text"
+			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 	#tag EndViewBehavior
