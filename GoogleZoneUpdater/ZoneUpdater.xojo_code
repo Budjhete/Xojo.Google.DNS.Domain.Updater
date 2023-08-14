@@ -22,7 +22,7 @@ Protected Class ZoneUpdater
 		  dim url as String = "https://domains.google.com/nic/update?hostname="+zone+"."+YourDomain+"&myip="+ip
 		  
 		  gSocking.RequestHeader("User-Agent") = "Chrome/41.0 "+YourGmail
-		  gSocking.RequestHeader("Authorization") =  "Basic " + EncodeBase64(UserName+":"+Password).ToText
+		  gSocking.RequestHeader("Authorization") =  "Basic " + EncodeBase64(UserName+":"+Password)
 		  //sock.RequestHeader("Content-Length", "8")
 		  
 		  gSocking.Send("GET", url)
