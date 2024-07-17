@@ -2,12 +2,12 @@
 Protected Class ZoneUpdater
 	#tag Method, Flags = &h0
 		Shared Function CheckIP() As String
-		  dim s as new HTTPSecureSocket
+		  Dim s As New HTTPSecureSocket
 		  
-		  dim ss as string = s.get("https://domains.google.com/checkip", 2)
+		  Dim ss As String = s.get("https://ipv4.icanhazip.com/", 2)
 		  
-		  
-		  Return ss.DefineEncoding(Encodings.UTF8)
+		  Dim nn As String = ss.DefineEncoding(Encodings.UTF8)
+		  Return nn.Left(nn.Length-1)
 		End Function
 	#tag EndMethod
 
