@@ -4,10 +4,19 @@ Protected Class ZoneUpdater
 		Shared Function CheckIP() As String
 		  Dim s As New HTTPSecureSocket
 		  
-		  Dim ss As String = s.get("https://ipv4.icanhazip.com/", 2)
+		  Dim ss As String = s.Get("https://app.kanjo.ca/whatmyip.php", 3)
 		  
-		  Dim nn As String = ss.DefineEncoding(Encodings.UTF8)
-		  Return nn.Left(nn.Length-1)
+		  if ss.DefineEncoding(Encodings.UTF8).Length<7 or ss.DefineEncoding(Encodings.UTF8).Length>16 then
+		    ss = s.get("https://ipv4.icanhazip.com/", 2)
+		    Dim nn As String = ss.DefineEncoding(Encodings.UTF8)
+		    Return nn.Left(nn.Length-1)
+		  else
+		    Dim nn As String = ss.DefineEncoding(Encodings.UTF8)
+		    Return nn.Left(nn.Length)
+		    
+		  end if
+		  
+		  
 		End Function
 	#tag EndMethod
 
