@@ -23,7 +23,7 @@ Inherits URLConnection
 		    
 		    System.DebugLog re.Message
 		  End Try
-		  'MsgBox err.Message + err.Reason
+		  ' MessageBox err.Message + err.Reason
 		End Sub
 	#tag EndEvent
 
