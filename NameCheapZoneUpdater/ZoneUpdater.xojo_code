@@ -2,12 +2,12 @@
 Protected Class ZoneUpdater
 	#tag Method, Flags = &h0
 		Shared Function CheckIP() As String
-		  Dim s As New HTTPSecureSocket
+		  Dim s As New URLConnection
 		  
-		  Dim ss As String = s.Get("https://app.kanjo.ca/whatmyip.php", 3)
+		  Dim ss As String = s.SendSync("GET", "https://app.kanjo.ca/whatmyip.php", 3)
 		  
 		  if ss.DefineEncoding(Encodings.UTF8).Length<7 or ss.DefineEncoding(Encodings.UTF8).Length>16 then
-		    ss = s.get("https://ipv4.icanhazip.com/", 2)
+		    ss = s.SendSync("GET", "https://ipv4.icanhazip.com/", 2)
 		    Dim nn As String = ss.DefineEncoding(Encodings.UTF8)
 		    Return nn.Left(nn.Length-1)
 		  else
