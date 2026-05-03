@@ -28,7 +28,6 @@ Protected Class ZoneUpdater
 
 	#tag Method, Flags = &h0
 		Sub Update()
-		  'dim url as String = "https://domains.google.com/nic/update?hostname="+zone+"."+YourDomain+"&myip="+ip
 		  dim url as string = "https://dynamicdns.park-your-domain.com/update?host="+zone+"&domain="+YourDomain+"&password="+Password+"&ip="+ip
 		  
 		  gSocking = new NameCheapZoneUpdater.gSocket(gInterface)
