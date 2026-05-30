@@ -4,17 +4,33 @@ Protected Class ZoneUpdater
 		Shared Function CheckIP() As String
 		  Dim s As New URLConnection
 		  
-		  Dim ss As String = s.SendSync("GET", "https://app.kanjo.ca/whatmyip.php", 3)
+		  Dim ss As String
+		  Dim nn As String
 		  
-		  if ss.DefineEncoding(Encodings.UTF8).Length<7 or ss.DefineEncoding(Encodings.UTF8).Length>16 then
-		    ss = s.SendSync("GET", "https://ipv4.icanhazip.com/", 2)
-		    Dim nn As String = ss.DefineEncoding(Encodings.UTF8)
-		    Return nn.Left(nn.Length-1)
-		  else
-		    Dim nn As String = ss.DefineEncoding(Encodings.UTF8)
-		    Return nn.Left(nn.Length)
+		  Try
+		    ss = s.SendSync("GET", "https://app.kanjo.ca/whatmyip.php", 3)
+		    nn = ss.DefineEncoding(Encodings.UTF8).Trim
 		    
-		  end if
+		    If nn.Length >= 7 And nn.Length <= 15 And nn.IndexOf(".") >= 0 Then
+		      Dim internalIP As Boolean = nn.Left(4) = "127." Or nn.Left(3) = "10." Or nn.Left(8) = "192.168." Or nn.Left(8) = "169.254."
+
+		      If nn.Left(4) = "172." Then
+		        Dim secondOctet As Integer = nn.NthField(".", 2).IntegerValue
+		        If secondOctet >= 16 And secondOctet <= 31 Then internalIP = True
+		      End If
+
+		      If Not internalIP Then Return nn
+		    End If
+		  Catch error As RuntimeException
+		  End Try
+
+		  Try
+		    ss = s.SendSync("GET", "https://ipv4.icanhazip.com/", 2)
+		    nn = ss.DefineEncoding(Encodings.UTF8).Trim
+		    Return nn
+		  Catch error As RuntimeException
+		    Return ""
+		  End Try
 		  
 		  
 		End Function
