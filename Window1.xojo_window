@@ -480,7 +480,7 @@ End
 		  
 		  
 		  
-		  System.DebugLog "Page received from : " + URL + " Status : " + str(HTTPStatus) + " - " + s
+		  DebugLog "Page received from : " + URL + " Status : " + str(HTTPStatus) + " - " + s
 		  
 		End Sub
 	#tag EndMethod

@@ -9,7 +9,7 @@ Inherits URLConnection
 		    
 		  Catch re As RuntimeException
 		    
-		    System.DebugLog re.Message
+		    DebugLog re.Message
 		  End Try
 		End Sub
 	#tag EndEvent
@@ -21,7 +21,7 @@ Inherits URLConnection
 		    
 		  Catch re As RuntimeException
 		    
-		    System.DebugLog re.Message
+		    DebugLog re.Message
 		  End Try
 		  ' MessageBox err.Message + err.Reason
 		End Sub
@@ -35,7 +35,7 @@ Inherits URLConnection
 		    
 		  Catch re As RuntimeException
 		    
-		    System.DebugLog re.Message
+		    DebugLog re.Message
 		  End Try
 		End Sub
 	#tag EndEvent
